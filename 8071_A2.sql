@@ -198,6 +198,43 @@ IF ((SELECT COUNT(*) FROM dbo.ServiceType) = 0)
 	INSERT INTO ServiceType VALUES ('Administration', NULL, 22);
 	GO
 
+IF ((SELECT COUNT(*) FROM dbo.CustomerService) = 0)
+	-- Insert into CustomerService
+	INSERT INTO CustomerService VALUES (1, 1, 30);
+	INSERT INTO CustomerService VALUES (1, 2, 45);
+	INSERT INTO CustomerService VALUES (1, 3, 60);
+	INSERT INTO CustomerService VALUES (2, 5, 45);
+	INSERT INTO CustomerService VALUES (2, 4, 30);
+	INSERT INTO CustomerService VALUES (2, 2, 60);
+	INSERT INTO CustomerService VALUES (3, 4, 70);
+	INSERT INTO CustomerService VALUES (3, 3, 50);
+	INSERT INTO CustomerService VALUES (3, 1, 90);
+	INSERT INTO CustomerService VALUES (4, 2, 60);
+	INSERT INTO CustomerService VALUES (4, 5, 70);
+	INSERT INTO CustomerService VALUES (4, 4, 45);
+	INSERT INTO CustomerService VALUES (5, 5, 120);
+	INSERT INTO CustomerService VALUES (5, 1, 60);
+	INSERT INTO CustomerService VALUES (5, 2, 45);
+	GO
+
+IF ((SELECT COUNT(*) FROM dbo.CustomerServiceSchedule) = 0)
+	-- Insert into CustomerServiceSchedule
+	INSERT INTO CustomerServiceSchedule VALUES (1, 2, 1, DATEADD(DAY, 45, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (1, 3, 2, DATEADD(DAY, 50, GETDATE()), 55, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (1, 1, 5, DATEADD(DAY, 12, GETDATE()), 35, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (2, 5, 1, DATEADD(DAY, 55, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (2, 4, 2, DATEADD(DAY, 53, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (2, 2, 5, DATEADD(DAY, 24, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (3, 4, 3, DATEADD(DAY, 45, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (3, 3, 4, DATEADD(DAY, 31, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (3, 1, 4, DATEADD(DAY, 4, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (4, 2, 2, DATEADD(DAY, 6, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (4, 5, 3, DATEADD(DAY, 25, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (4, 4, 1, DATEADD(DAY, 60, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (5, 2, 2, DATEADD(DAY, 21, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (5, 2, 3, DATEADD(DAY, 22, GETDATE()), 45, 'c');
+	INSERT INTO CustomerServiceSchedule VALUES (5, 2, 1, DATEADD(DAY, 44, GETDATE()), 45, 'c');	
+	GO
 
 ;
 
